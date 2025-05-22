@@ -1,0 +1,128 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Task - ContactFlow CRM</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/create-task.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-project-diagram logo-icon"></i>
+                <h2>ContactFlow</h2>
+                <button id="toggleSidebar" class="toggle-sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="sidebar-content">
+                <ul class="sidebar-menu">
+                    <li>
+                        <a href="admin-dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-requests.html">
+                            <i class="fas fa-ticket-alt"></i>
+                            <span>Service Requests</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-tasks.html">
+                            <i class="fas fa-tasks"></i>
+                            <span>Task Board</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="admin-clients.html">
+                            <i class="fas fa-users"></i>
+                            <span>Clients</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-analytics.html">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="btn-logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-left">
+                    <h1>Create Task</h1>
+                </div>
+                <div class="header-right">
+                    <div class="user-profile">
+                        <img src="../assets/images/admin-avatar.svg" alt="Admin Avatar" id="userAvatar">
+                        <span id="userName">Name</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-body">
+                <div class="create-task-form">
+                    <form id="createTaskForm">
+                        <div class="form-group">
+                            <label for="taskTitle">Task Title</label>
+                            <input type="text" id="taskTitle" name="taskTitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="taskDescription">Description</label>
+                            <textarea id="taskDescription" name="taskDescription" rows="5" required></textarea>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="taskStartDate">Start Date</label>
+                                <input type="date" id="taskStartDate" name="taskStartDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="taskEndDate">End Date</label>
+                                <input type="date" id="taskEndDate" name="taskEndDate" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="taskClient">Client</label>
+                            <select id="taskClient" name="taskClient" required>
+                                <option value="">Select Client</option>
+                            </select>
+                        </div>
+                        <div class="form-actions">
+                            <a href="admin-tasks.html" class="btn-secondary">Cancel</a>
+                            <button type="submit" class="btn-primary">Save Task</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="../assets/js/localStorage.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/domUtils.js"></script>
+    <script src="../assets/js/create-task.js"></script>
+</body>
+
+</html> 

@@ -1,0 +1,137 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clients - ContactFlow CRM</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/admin-clients.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-project-diagram logo-icon"></i>
+                <h2>ContactFlow</h2>
+                <button id="toggleSidebar" class="toggle-sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="sidebar-content">
+                <ul class="sidebar-menu">
+                    <li>
+                        <a href="admin-dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-requests.html">
+                            <i class="fas fa-ticket-alt"></i>
+                            <span>Service Requests</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-tasks.html">
+                            <i class="fas fa-tasks"></i>
+                            <span>Task Board</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="admin-clients.html">
+                            <i class="fas fa-users"></i>
+                            <span>Clients</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-analytics.html">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="btn-logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-left">
+                    <h1>Clients</h1>
+                </div>
+                <div class="header-right">
+                    <div class="user-profile">
+                        <img src="../assets/images/admin-avatar.svg" alt="Admin Avatar" id="userAvatar">
+                        <span id="userName">Name</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-body">
+                <div class="clients-header">
+                    <button id="createClientBtn" class="btn-primary">
+                        <i class="fas fa-plus"></i> Create Client
+                    </button>
+                </div>
+                <div id="clientFormContainer" class="hidden">
+                    <form id="clientForm">
+                        <div class="form-group">
+                            <label for="clientName">Name</label>
+                            <input type="text" id="clientName" name="clientName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientEmail">Email</label>
+                            <input type="email" id="clientEmail" name="clientEmail" required>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">Save Client</button>
+                            <button type="button" id="cancelClientBtn" class="btn-secondary">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="clients-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email Address</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="clientsList">
+                            <tr class="empty-state">
+                                <td colspan="4">
+                                    <i class="fas fa-users"></i>
+                                    <p>No clients available</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="../assets/js/localStorage.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/domUtils.js"></script>
+    <script src="../assets/js/admin-clients.js"></script>
+</body>
+
+</html>
